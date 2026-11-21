@@ -74,4 +74,12 @@
     }else{a.pause();set(false);}
   });
   a.addEventListener('ended',function(){set(false);});
+  function stopAll(){
+    if(wa&&waOn){waStop();}
+    if(!a.paused){a.pause();}
+    set(false);
+  }
+  document.addEventListener('visibilitychange',function(){if(document.hidden)stopAll();});
+  window.addEventListener('pagehide',stopAll);
+  window.addEventListener('blur',function(){if(document.hidden)stopAll();});
 })();
