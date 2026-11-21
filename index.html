@@ -1,1 +1,133 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Muhamad Frian Erliana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero bar" id="top">
+  <div class="wrap">
+    <div class="top">
+      <span class="clock">Tasikmalaya, <b id="jam">--.--</b> WIB</span>
+      <nav aria-label="Navigasi utama">
+        <a href="#beranda">Beranda</a>
+        <a href="#tentang">Hobi</a>
+        <a href="#pendidikan">Pendidikan</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="view" id="v-beranda">
+  <div class="hero" style="padding-top:0"><div class="wrap">
+    <div class="homegrid"><div class="homeleft">
+    <h1 aria-label="Muhamad Frian Erliana">
+      <span><i>Muhamad</i></span>
+      <span><i>Frian</i></span>
+      <span><i>Erliana</i></span>
+    </h1>
+    <a class="badge" href="#kontak">Mari berkenalan</a>
+    </div>
+    <img class="homephoto" src="foto1.webp" alt="Frian duduk dengan topeng merah dan kaus hitam">
+    </div>
+  </div></div>
+</div>
+
+<div class="view" id="v-tentang">
+<div class="hero ph"><div class="wrap"><h1 class="pt">Hobi</h1></div></div>
+  <section>
+    <div class="wrap">
+      <p class="label">Tentang</p>
+      
+      <div class="about">
+        <dl>
+          <div><dt>Olahraga</dt><dd>Futsal</dd></div>
+          <div><dt>Posisi futsal</dt><dd>Pivot</dd></div>
+          <div><dt>Olahraga</dt><dd>Mini soccer</dd></div>
+          <div><dt>Posisi mini soccer</dt><dd>Penyerang</dd></div>
+          <div><dt>Game</dt><dd>Mobile Legends</dd></div>
+          <div><dt>Role Mobile Legends</dt><dd>All role</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="view" id="v-pendidikan">
+<div class="hero ph"><div class="wrap"><h1 class="pt">Pendidikan</h1></div></div>
+  <section><div class="wrap">
+    
+    <dl>
+      <div><dt>Program studi</dt><dd>Teknik Informatika</dd></div>
+      <div><dt>Kampus</dt><dd>UNIVERSITAS PERJUANGAN TASIKMALAYA</dd></div>
+      <div><dt>Kota</dt><dd>Tasikmalaya</dd></div>
+      <div><dt>Status</dt><dd>Mahasiswa</dd></div>
+    </dl>
+  </div></section>
+</div>
+
+<div class="view" id="v-galeri">
+<div class="hero ph"><div class="wrap"><h1 class="pt">Galeri</h1></div></div>
+  <section class="gallery">
+    <div class="wrap">
+      <p class="label">Galeri</p>
+      <div class="filters" role="group" aria-label="Saring foto">
+        <button type="button" data-f="Abaw" aria-pressed="true">Abaw</button>
+        <button type="button" data-f="Futsal" aria-pressed="false">Futsal</button>
+        <button type="button" data-f="Mini soccer" aria-pressed="false">Mini soccer</button>
+      </div>
+      <div class="grid">
+        <button class="shot" type="button" data-c="Abaw" data-i="0" aria-label="Perbesar foto 1"><img src="foto2.jpg" alt="Frian berbaring di atas spanduk Teknik Informatika" loading="lazy"><span>Abaw</span></button>
+        <button class="shot" type="button" data-c="Abaw" data-i="1" aria-label="Perbesar foto 2"><img src="foto3.jpg" alt="Frian tengkurap di atas spanduk Informatics" loading="lazy"><span>Abaw</span></button>
+        <button class="shot" type="button" data-c="Futsal" data-i="2" aria-label="Perbesar foto 3"><img src="foto4.jpg" alt="Foto bersama teman-teman setelah bermain futsal" loading="lazy"><span>Futsal</span></button>
+        <button class="shot" type="button" data-c="Futsal" data-i="3" aria-label="Perbesar foto 4"><img src="foto5.jpg" alt="Foto bersama teman-teman futsal dengan pose tangan" loading="lazy"><span>Futsal</span></button>
+        <button class="shot" type="button" data-c="Mini soccer" data-i="4" aria-label="Perbesar foto 5"><img src="foto6.jpg" alt="Foto bersama banyak teman di lapangan mini soccer pada malam hari" loading="lazy"><span>Mini soccer</span></button>
+        <button class="shot" type="button" data-c="Mini soccer" data-i="5" aria-label="Perbesar foto 6"><img src="foto7.jpg" alt="Foto bersama teman-teman di lapangan mini soccer" loading="lazy"><span>Mini soccer</span></button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="view" id="v-kontak">
+<div class="hero ph"><div class="wrap"><h1 class="pt">Kontak</h1></div></div>
+  <section class="contact">
+    <div class="wrap">
+      <p class="label">Kontak</p>
+      <a class="mail" href="https://wa.me/6285861926862" rel="noopener">WhatsApp 0858-6192-6862</a>
+      <div class="links">
+        <a href="https://www.instagram.com/ms_abaw" rel="noopener">Instagram @ms_abaw</a>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<audio id="bgm" loop playsinline preload="auto"></audio>
+<button class="music" id="musicBtn" type="button" aria-label="Putar musik" aria-pressed="false">
+  <svg class="i-play" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+  <svg class="i-pause" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
+</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<footer>
+  <div class="wrap">© 2026 Muhamad Frian Erliana</div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto diperbesar">
+  <img id="lbimg" alt="">
+  <button class="x" type="button" id="lbx">Tutup</button>
+  <button class="p" type="button" id="lbp" aria-label="Foto sebelumnya">Sebelumnya</button>
+  <button class="n" type="button" id="lbn" aria-label="Foto berikutnya">Berikutnya</button>
+  <div class="c" id="lbc"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
