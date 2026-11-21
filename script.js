@@ -52,42 +52,26 @@
   var a=document.getElementById('bgm'),b=document.getElementById('musicBtn'),t=document.getElementById('toast'),tm;
   function say(m){t.textContent=m;t.classList.add('on');clearTimeout(tm);tm=setTimeout(function(){t.classList.remove('on');},2200);}
   function set(p){b.setAttribute('aria-pressed',p?'true':'false');b.setAttribute('aria-label',p?'Jeda musik':'Putar musik');}
-  var ready=false,bytes=null,ctx=null,buf=null,src=null,wa=false,waOn=false;
-  function getBytes(){
-    if(bytes)return bytes;
-    var bin=atob(document.getElementById('bgmdata').textContent.trim()),n=bin.length,u=new Uint8Array(n);
-    for(var i=0;i<n;i++)u[i]=bin.charCodeAt(i);
-    bytes=u;return u;
-  }
-  function load(){
-    if(ready)return true;
-    try{a.src=URL.createObjectURL(new Blob([getBytes()],{type:'audio/mpeg'}));a.load();ready=true;return true;}
-    catch(e){return false;}
-  }
+  var ctx=null,buf=null,src=null,wa=false,waOn=false;
+  a.src='musik.mp3';
   function waStart(){
     var AC=window.AudioContext||window.webkitAudioContext;
     if(!AC){say('Browser ini tidak mendukung audio');return;}
-    wa=true;
-    if(!ctx)ctx=new AC();
-    function go(){
-      src=ctx.createBufferSource();src.buffer=buf;src.loop=true;src.connect(ctx.destination);src.start(0);
-      if(ctx.resume)ctx.resume();waOn=true;set(true);
-    }
+    wa=true;if(!ctx)ctx=new AC();
+    function go(){src=ctx.createBufferSource();src.buffer=buf;src.loop=true;src.connect(ctx.destination);src.start(0);if(ctx.resume)ctx.resume();waOn=true;set(true);}
     if(buf){go();return;}
-    var ab=getBytes().buffer.slice(0);
-    var ok=function(d){buf=d;go();},fail=function(){say('Musik tidak bisa diputar di browser ini');};
-    var r=ctx.decodeAudioData(ab,ok,fail);
-    if(r&&r.then)r.then(ok,fail);
+    fetch('musik.mp3').then(function(r){return r.arrayBuffer();}).then(function(ab){
+      var ok=function(d){buf=d;go();},fail=function(){say('Musik tidak bisa diputar di browser ini');};
+      var r=ctx.decodeAudioData(ab,ok,fail);if(r&&r.then)r.then(ok,fail);
+    }).catch(function(){say('Musik tidak bisa dimuat');});
   }
   function waStop(){try{src.stop(0);}catch(e){}waOn=false;set(false);}
   b.addEventListener('click',function(){
     if(wa){if(waOn)waStop();else waStart();return;}
-    if(!load()){waStart();return;}
     if(a.paused){
       var p;try{p=a.play();}catch(e){waStart();return;}
       if(p&&p.then){p.then(function(){set(true);}).catch(function(){waStart();});}else{set(true);}
     }else{a.pause();set(false);}
   });
-  a.addEventListener('error',function(){if(!wa&&b.getAttribute('aria-pressed')!=='true'){/* ditangani oleh play().catch */}});
   a.addEventListener('ended',function(){set(false);});
 })();
