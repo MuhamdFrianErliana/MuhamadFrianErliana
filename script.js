@@ -82,4 +82,6 @@
   document.addEventListener('visibilitychange',function(){if(document.hidden)stopAll();});
   window.addEventListener('pagehide',stopAll);
   window.addEventListener('blur',function(){if(document.hidden)stopAll();});
+  document.addEventListener('freeze',stopAll);
+  setInterval(function(){if(document.visibilityState==='hidden')stopAll();},500);
 })();
