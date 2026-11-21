@@ -120,9 +120,8 @@ h1.pt{font-size:clamp(48px,11vw,120px);margin-top:clamp(20px,4vw,48px);line-heig
 .top nav a,.filters button,.links a,.lb button{min-height:44px;padding:0 18px;display:inline-flex;align-items:center;border-radius:999px;font:500 14px/1 "Space Grotesk",sans-serif;text-decoration:none}
 .top nav a{border:1px solid #3A4A3D;color:var(--hero-ink)}
 .top nav a:hover{border-color:var(--sun)}
-.top nav a[aria-current]{background:var(--sun);border-color:var(--sun);color:var(--on-sun);font-weight:700}
+.top nav a[aria-current]{background:var(--sun);border-color:var(--sun);color:var(--on-sun)}
 .filters button{font-weight:500}
-.filters button[aria-pressed="true"]{font-weight:700}
 .links a:hover{background:var(--sun);border-color:var(--sun);color:var(--on-sun)}
 .homephoto{border-radius:24px;border:1px solid var(--line);filter:none}
 dl{border-top:2px solid var(--sun)}
@@ -132,3 +131,22 @@ dl{border-top:2px solid var(--sun)}
   #v-beranda h1{font-size:clamp(40px,13vw,80px)}
   h1.pt{font-size:clamp(40px,13vw,80px)}
 }
+
+/* kartu, jarak, kontak */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{padding:18px;border-radius:18px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;gap:4px}
+.card.wide{grid-column:span 2}
+.card span{font-size:13px;color:var(--muted)}
+.card strong{font:700 20px/1.25 "Space Grotesk",sans-serif}
+.card em{font-style:normal;font-weight:500;font-size:15px;color:var(--sun)}
+.mail{overflow-wrap:normal}
+.nb{white-space:nowrap}
+footer{padding-bottom:112px}
+@media (max-width:760px){
+  .hero.ph{padding-bottom:28px}
+  h1.pt{margin-top:24px}
+  section{padding:28px 0 40px}
+  .mail{font-size:clamp(26px,7.4vw,76px);margin-top:0}
+  .gallery .filters{margin-top:0}
+}
+@media (min-width:761px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.card.wide{grid-column:auto}}
