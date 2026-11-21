@@ -123,11 +123,11 @@ h1.pt{font-size:clamp(48px,11vw,120px);margin-top:clamp(20px,4vw,48px);line-heig
 .top nav a[aria-current]{background:var(--sun);border-color:var(--sun);color:var(--on-sun)}
 .filters button{font-weight:500}
 .links a:hover{background:var(--sun);border-color:var(--sun);color:var(--on-sun)}
-.homephoto{border-radius:24px;border:1px solid var(--line);filter:none}
+.homephoto{filter:drop-shadow(0 12px 24px rgba(0,0,0,.45))}
 dl{border-top:2px solid var(--sun)}
 @media (max-width:760px){
   .homegrid{flex-direction:column;gap:20px}
-  .homephoto{width:100%;max-width:420px;margin-top:0}
+  .homephoto{width:min(62%,240px);max-height:42vh;object-fit:contain;object-position:left top;margin-top:0}
   #v-beranda h1{font-size:clamp(40px,13vw,80px)}
   h1.pt{font-size:clamp(40px,13vw,80px)}
 }
