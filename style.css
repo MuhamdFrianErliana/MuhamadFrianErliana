@@ -150,3 +150,10 @@ footer{padding-bottom:112px}
   .gallery .filters{margin-top:0}
 }
 @media (min-width:761px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.card.wide{grid-column:auto}}
+
+/* desktop: nama tidak terpotong, foto muat layar */
+@media (min-width:761px){
+  #v-beranda h1{font-size:clamp(64px,8.2vw,124px)}
+  .homephoto{width:auto;max-width:40%;max-height:70vh;object-fit:contain}
+}
+.lb{background:rgba(6,9,7,.98)}
