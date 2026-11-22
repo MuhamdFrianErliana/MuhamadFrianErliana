@@ -40,14 +40,14 @@
 
 (function(){
   var btns=document.querySelectorAll('.filters button'),shots=document.querySelectorAll('.shot');
-  var cur='';
+  var cur='Abaw';
   function pick(f){
-    cur=(f===cur)?'':f;
+    cur=f;
     [].forEach.call(btns,function(x){x.setAttribute('aria-pressed',x.getAttribute('data-f')===cur?'true':'false');});
-    [].forEach.call(shots,function(s){s.hidden=cur!==''&&s.getAttribute('data-c')!==cur;});
+    [].forEach.call(shots,function(s){s.hidden=s.getAttribute('data-c')!==cur;});
   }
   [].forEach.call(btns,function(b){b.addEventListener('click',function(){pick(b.getAttribute('data-f'));});});
-  pick('');
+  pick('Abaw');
 })();
 
 (function(){
