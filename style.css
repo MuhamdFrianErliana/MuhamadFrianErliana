@@ -203,3 +203,8 @@ svg.fx .hit line,svg.fx .hit circle{stroke:var(--hero-ink);stroke-width:1.6;fill
 .mail{margin:8px 0 24px;overflow-wrap:normal;white-space:nowrap}
 .links a.wa{background:var(--sun);border-color:var(--sun);color:var(--on-sun);font-weight:700}
 .links a.wa:hover{filter:brightness(1.08)}
+
+/* Kontak: semua tombol sama warnanya */
+.links{margin-top:8px}
+.links a,.links a.wa{background:var(--sun);border-color:var(--sun);color:var(--on-sun);font-weight:700}
+.links a:hover,.links a.wa:hover{background:var(--sun);border-color:var(--sun);color:var(--on-sun);filter:brightness(1.08)}
