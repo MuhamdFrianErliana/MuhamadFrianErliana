@@ -157,3 +157,13 @@ dl{border-top:2px solid var(--sun)}
 .lb{background:rgba(6,9,7,.98)}
 
 main{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+
+/* foto Beranda: gerakan melompat */
+.homephoto{transform-origin:50% 100%;will-change:transform;cursor:pointer;-webkit-tap-highlight-color:transparent;animation:lompat 1.6s cubic-bezier(.3,0,.4,1) infinite}
+@keyframes lompat{
+  0%,100%{transform:translateY(0) scale(1.05,.94)}
+  15%{transform:translateY(0) scale(1.05,.94)}
+  50%{transform:translateY(-44px) scale(.97,1.04)}
+  85%{transform:translateY(0) scale(1.05,.94)}
+}
+@media (prefers-reduced-motion:reduce){.homephoto{animation:none}}
