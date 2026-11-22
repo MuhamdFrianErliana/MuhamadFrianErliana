@@ -42,10 +42,10 @@
   var btns=document.querySelectorAll('.filters button'),shots=document.querySelectorAll('.shot');
   function pick(f){
     [].forEach.call(btns,function(x){x.setAttribute('aria-pressed',x.getAttribute('data-f')===f?'true':'false');});
-    [].forEach.call(shots,function(s){s.hidden=s.getAttribute('data-c')!==f;});
+    [].forEach.call(shots,function(s){s.hidden=f!=='Semua'&&s.getAttribute('data-c')!==f;});
   }
   [].forEach.call(btns,function(b){b.addEventListener('click',function(){pick(b.getAttribute('data-f'));});});
-  pick('Abaw');
+  pick('Semua');
 })();
 
 (function(){
@@ -132,4 +132,16 @@
   window.addEventListener('hashchange',function(){if(!played&&onHome())start();else if(!onHome()&&!busy)root.classList.add('wbdone');});
   pic.addEventListener('click',function(){if(!busy&&onHome())play();});
   start();
+})();
+
+(function(){
+  var t=document.getElementById('toast'),b=document.getElementById('musicBtn');
+  if(!t||!b)return;
+  try{if(sessionStorage.getItem('musikHint'))return;}catch(e){}
+  setTimeout(function(){
+    if(b.getAttribute('aria-pressed')==='true')return;
+    t.textContent='Ketuk tombol Musik untuk memutar lagu';t.classList.add('on');
+    setTimeout(function(){t.classList.remove('on');},3500);
+    try{sessionStorage.setItem('musikHint','1');}catch(e){}
+  },4200);
 })();

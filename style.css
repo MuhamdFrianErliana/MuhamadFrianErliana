@@ -181,3 +181,25 @@ svg.fx .hit line,svg.fx .hit circle{stroke:var(--hero-ink);stroke-width:1.6;fill
 .homephoto.goyang{animation:goyang 2.4s ease-in-out infinite}
 @keyframes goyang{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
 @media (prefers-reduced-motion:reduce){.homephoto.goyang{animation:none}}
+
+/* 2: tombol musik berlabel */
+.music{width:auto;height:auto;min-height:52px;padding:0 20px 0 16px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;font:700 14px/1 "Space Grotesk",sans-serif}
+.music svg{width:22px;height:22px;flex:0 0 auto}
+.music[aria-pressed="true"] .mt{font-size:0}
+.music[aria-pressed="true"] .mt::after{content:"Jeda";font-size:14px}
+.toast{right:18px;max-width:calc(100% - 36px)}
+/* 3: transisi antar halaman */
+.view.on:not(#v-beranda){animation:viewin .4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes viewin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.view.on:not(#v-beranda){animation:none}}
+/* 4: desktop lebih rapat */
+@media (min-width:761px){
+  h1.pt{font-size:clamp(48px,6.5vw,92px);margin-top:28px}
+  .hero.ph{padding-bottom:32px}
+  section{padding:56px 0 72px}
+  .mail{font-size:clamp(36px,5vw,64px)}
+}
+/* 5: tombol WhatsApp */
+.mail{margin:8px 0 24px;overflow-wrap:normal;white-space:nowrap}
+.links a.wa{background:var(--sun);border-color:var(--sun);color:var(--on-sun);font-weight:700}
+.links a.wa:hover{filter:brightness(1.08)}
