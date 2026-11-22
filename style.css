@@ -176,3 +176,8 @@ svg.fx .hit line,svg.fx .hit circle{stroke:var(--hero-ink);stroke-width:1.6;fill
   #v-beranda h1{font-size:clamp(30px,8.6vw,80px)}
   .motto{font-size:16px;margin-top:18px}
 }
+
+/* foto goyang setelah jaring */
+.homephoto.goyang{animation:goyang 2.4s ease-in-out infinite}
+@keyframes goyang{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+@media (prefers-reduced-motion:reduce){.homephoto.goyang{animation:none}}

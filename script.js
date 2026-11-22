@@ -111,7 +111,7 @@
     await p.animate([{strokeDashoffset:0},{strokeDashoffset:-1}],{duration:260,easing:'ease-in',fill:'forwards'}).finished;
     p.remove();}
   async function play(){
-    if(busy)return;busy=true;
+    if(busy)return;busy=true;pic.classList.remove('goyang');
     if(!root.classList.contains('wb')){busy=false;return;}
     root.classList.remove('wbdone');fx.innerHTML='';
     lines.concat([motto]).forEach(function(e){e.getAnimations().forEach(function(a){a.cancel();});});
@@ -122,6 +122,7 @@
     await Promise.all(lines.map(function(l,k){return web(from,endPt(l),k,bends[k]||12);}));
     root.classList.add('wbdone');
     lines.concat([motto]).forEach(function(e){e.getAnimations().forEach(function(a){a.cancel();});});
+    pic.classList.add('goyang');
     played=true;busy=false;}
   function ready(){var f=document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve();
     var im=pic.complete?Promise.resolve():new Promise(function(r){pic.addEventListener('load',r);pic.addEventListener('error',r);});
